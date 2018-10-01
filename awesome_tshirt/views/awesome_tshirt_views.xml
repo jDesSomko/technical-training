@@ -98,6 +98,6 @@
     <!-- menu items -->
     <menuitem name="Awesome T-Shirts" id="awesome_tshirt.menu_root" groups="base.group_user" web_icon="awesome_tshirt,static/description/icon.png"/>
     <menuitem name="Orders" id="awesome_tshirt.order" parent="awesome_tshirt.menu_root" action="awesome_tshirt.orders"/>
-    <menuitem name="Orders" id="awesome_tshirt.dashboard" parent="awesome_tshirt.menu_root" action="awesome_tshirt.action_tshirt_dashboard"/>
+    <menuitem name="Dashboard" id="awesome_tshirt.dashboard" parent="awesome_tshirt.menu_root" action="awesome_tshirt.action_tshirt_dashboard"/>
 
 </odoo>
