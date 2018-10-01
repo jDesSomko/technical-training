@@ -13,8 +13,6 @@ odoo.define('awesome_tshirt.Counter', function (require) {
         init: function (parent, value) {
             this._super(parent);
             this.value = value;
-
-            this.renderElement();
         },
 
         //-------------------------------
