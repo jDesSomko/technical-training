@@ -16,5 +16,6 @@
         'security/ir.model.access.csv',
         'views/awesome_tshirt_views.xml',
         'views/templates.xml',
+        'views/assets.xml',
     ],
 }

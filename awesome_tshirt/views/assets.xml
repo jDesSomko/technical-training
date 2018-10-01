@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <odoo>
+        <template id="assets_backend" name="tshirt assets" inherit_id="web.assets_backend">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_dashboard.js"/>
+            </xpath>
+        </template>
+    </odoo>
+</odoo>

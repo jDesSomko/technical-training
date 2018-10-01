@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <odoo>
-        <template id="assets_backend" name="map assets" inherit_id="web.assets_backend">
-            <xpath expr="." position="inside">
-                <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_dashboard.js"/>
-            </xpath>
-        </template>
-    </odoo>
-
     <template id="awesome_tshirt.order_public_page" name="Awesome T-Shirt public page">
         <t t-call="web.layout">
             <t t-set="head">
