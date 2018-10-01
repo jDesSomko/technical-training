@@ -14,6 +14,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
 
             // Render and insert into DOM
             counter.appendTo(this.$el.find('.counter'));
+            this.renderButtons();
         },
         _onClickCustomer: function (ev) {
             ev.preventDefault();
