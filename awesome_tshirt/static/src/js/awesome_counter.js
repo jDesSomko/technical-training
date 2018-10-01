@@ -5,14 +5,16 @@ odoo.define('awesome_tshirt.Counter', function (require) {
 
     return Widget.extend({
         template: 'counter.template',
-        xmlDependencies: ['/awesome_tshirt/static/xml/awesome_counter.xml'],
+        xmlDependencies: ['/awesome_tshirt/static/src/xml/awesome_counter.xml'],
         events: {
-            'click button.decrease': '_onClickDecrement',
+            'click button.decrement': '_onClickDecrement',
             'click button.increment': '_onClickIncrement'
         },
         init: function (parent, value) {
             this._super(parent);
             this.value = value;
+
+            this.renderElement();
         },
 
         //-------------------------------
@@ -20,12 +22,22 @@ odoo.define('awesome_tshirt.Counter', function (require) {
         //-------------------------------
         increment: function () {
             this.value++;
-            this._render();
+            this.renderElement();
         },
 
         decrement: function () {
             this.value--;
-            this._render();
+            this.renderElement();
+        },
+
+
+        //-------------------------------
+        // Private
+        //-------------------------------
+        _render: function () {
+            this.$el.html(
+                $('<span>').text(this.value)
+            );
         },
 
         //-------------------------------

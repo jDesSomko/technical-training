@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <t t-name="counter.template">
-        <div class="oe_kanban_global_click o_kanban_record">
+        <div class="awesome_counter kanban">
             <span class="val">
                 <t t-esc="widget.count"/>
             </span>
 
-            <div class="oe_kanban_details">
+            <div>
                 <button class="increment o_kanban_record_title">
                     <span>Increment (+)</span>
                 </button>
