@@ -17,6 +17,12 @@ odoo.define('awesome_tshirt.Pie', function (require) {
             this._super(parent);
             this.values = values;
         },
+        willStart: function() {
+            var self = this;
+            return $.when(ajax.loadLibs(this), this._super()).then(function() {
+                return self.fetch_data();
+            });
+        },
         start: function () {
             this._super.apply(this, arguments);
 
