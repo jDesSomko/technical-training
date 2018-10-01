@@ -7,11 +7,24 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var core = require('web.core');
 
     var Dashboard = AbstractAction.extend(ControlPanelMixin, {
+        template: 'awesome_tshirt.dashboard',
+        events: {
+            'click button.customer': '_onClickCustomer'
+        },
         start: function () {
             var counter = new Counter(this, 4);
 
             // Render and insert into DOM
-            counter.appendTo(this.$el);
+            counter.appendTo(this.$el.find('.counter'));
+        },
+        _onClickCustomer: function (ev) {
+            ev.preventDefault();
+            return this.do_action({
+                type: 'ir.actions.act_window',
+                res_model: 'res.partner',
+                views: [[false, 'kanban']],
+                target: 'current'
+            });
         }
     });
 

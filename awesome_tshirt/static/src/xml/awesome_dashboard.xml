@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <t t-name="awesome_tshirt.dashboard">
+        <div>
+            <div class="counter"/>
+
+            <div class="actions">
+                <button class="customers" name="Customers"/>
+                <button class="customers" name="Customers"/>
+                <button class="customers" name="Customers"/>
+            </div>
+        </div>
+    </t>
+</odoo>
