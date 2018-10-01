@@ -27,7 +27,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             ev.preventDefault();
 
             var d = new Date()
-            d.setDate(d.getDate()-5);
+            d.setDate(d.getDate() - 7);
 
             return this._do_action_orders('New Orders', [
                 ['create_date', '>=', d],
@@ -38,11 +38,11 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             ev.preventDefault();
 
             var d = new Date()
-            d.setDate(d.getDate()-5);
+            d.setDate(d.getDate() - 7);
 
             return this._do_action_orders('New Orders', [
                 ['create_date', '>=', d],
-                ['state', '=', 'cancel']
+                ['state', '=', 'cancelled']
             ])
         },
         _do_action_orders: function(name, domain) {
