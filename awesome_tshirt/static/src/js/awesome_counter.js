@@ -7,14 +7,12 @@ odoo.define('awesome_tshirt.Counter', function (require) {
         template: 'counter.template',
         xmlDependencies: ['/awesome_tshirt/static/xml/awesome_counter.xml'],
         events: {
-            click: '_onClick'
+            'click button.decrease': '_onClickDecrement',
+            'click button.increment': '_onClickIncrement'
         },
         init: function (parent, value) {
             this._super(parent);
             this.value = value;
-        },
-        start: function () {
-            this._render();
         },
 
         //-------------------------------
@@ -25,20 +23,19 @@ odoo.define('awesome_tshirt.Counter', function (require) {
             this._render();
         },
 
-        //-------------------------------
-        // Private
-        //-------------------------------
-        _render: function () {
-            this.$el.html(
-                $('<span>').text(this.value)
-            );
+        decrement: function () {
+            this.value--;
+            this._render();
         },
 
         //-------------------------------
         // Handlers
         //-------------------------------
-        _onClick: function () {
+        _onClickIncrement: function () {
             this.increment();
+        },
+        _onClickDecrement: function () {
+            this.decrement();
         }
     });
 });

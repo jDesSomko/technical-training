@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <div t-name="counter.template">
-        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban o_kanban_record" modifiers="{}" tabindex="0" role="article">
-            <span class="o_kanban_image val">
+    <t t-name="counter.template">
+        <div class="oe_kanban_global_click o_kanban_record">
+            <span class="val">
                 <t t-esc="widget.count"/>
             </span>
 
-            <div class="oe_kanban_details" modifiers="{}">
-                <button class="o_kanban_record_title oe_partner_heading" modifiers="{}">
-                    <span>Counter</span>
+            <div class="oe_kanban_details">
+                <button class="increment o_kanban_record_title">
+                    <span>Increment (+)</span>
+                </button>
+
+                <button class="decrement o_kanban_record_title">
+                    <span>Decrement (-)</span>
                 </button>
             </div>
         </div>
-    </div>
+    </t>
 </odoo>

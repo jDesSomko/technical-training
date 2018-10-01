@@ -6,7 +6,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var Counter = require('awesome_tshirt.Counter');
     var core = require('web.core');
 
-    var ClientAction = AbstractAction.extend(ControlPanelMixin, {
+    var Dashboard = AbstractAction.extend(ControlPanelMixin, {
         start: function () {
             var counter = new Counter(this, 4);
 
@@ -15,7 +15,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         }
     });
 
-    core.action_registry.add('awesome-tshirt-action', ClientAction);
+    core.action_registry.add('awesome-tshirt-action', Dashboard);
 
-    return {};
+    return Dashboard;
 });
