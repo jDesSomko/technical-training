@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <t t-name="counter.template">
-        <div class="awesome_counter kanban">
-            <span class="val">
-                <t t-esc="widget.count"/>
-            </span>
+    <div t-name="counter.template" class="awesome_counter kanban">
+        <span class="val">
+            <t t-esc="widget.count"/>
+        </span>
 
-            <div>
-                <button class="increment o_kanban_record_title">
-                    <span>Increment (+)</span>
-                </button>
+        <div>
+            <button class="increment o_kanban_record_title">
+                <span>Increment (+)</span>
+            </button>
 
-                <button class="decrement o_kanban_record_title">
-                    <span>Decrement (-)</span>
-                </button>
-            </div>
+            <button class="decrement o_kanban_record_title">
+                <span>Decrement (-)</span>
+            </button>
         </div>
-    </t>
+    </div>
 </odoo>
