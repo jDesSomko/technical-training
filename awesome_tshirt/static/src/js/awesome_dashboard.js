@@ -7,12 +7,8 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var core = require('web.core');
 
     var Dashboard = AbstractAction.extend(ControlPanelMixin, {
-        template: 'awesome_tshirt.dashboard',
-        events: {
-            'click button.open_customers': '_onClickCustomer',
-            'click button.cancelled_orders': '_onClickCancelledOrders',
-            'click button.new_orders': '_onClickNewOrders'
-        },
+        template: 'awesome_tshirt.Dashboard',
+        events: {},
         start: function () {
             var counter = new Counter(this, 4);
 
@@ -54,6 +50,18 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
                 target: 'current',
                 domain: domain
             });
+        },
+        renderButtons: function ($node) {
+            this.$buttons = $(qweb.render('awesome_tshirt.Buttons', {
+                btnClass: 'btn-primary',
+                widget: this
+            }));
+
+            this.$buttons.on('click', 'button.open_customers', this._onClickCustomer.bind(this));
+            this.$buttons.on('click', 'button.cancelled_orders', this._onClickCancelledOrders.bind(this));
+            this.$buttons.on('click', 'button.new_orders', this._onClickNewOrders.bind(this));
+
+            this.$buttons.appendTo($node);
         }
     });
 
