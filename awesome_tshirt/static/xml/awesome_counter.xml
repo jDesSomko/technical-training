@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <div t-name="counter.template">
+        <span class="val"><t t-esc="widget.count"/></span>
+        <button>Increment</button>
+    </div>
+</odoo>
