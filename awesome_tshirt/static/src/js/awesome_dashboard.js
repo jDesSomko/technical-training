@@ -21,6 +21,8 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             return $.when(this._super.apply(this, arguments), def);
         },
         start: function () {
+            this._super.apply(this, arguments);
+
             var counter = new Counter(this, 4);
 
             // Render and insert into DOM
