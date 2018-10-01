@@ -9,7 +9,7 @@
     """,
     'author': "Odoo",
     'category': 'Extra Tools',
-    'version': '1.0',
+    'version': '12.0.1.0',
     'application': True,
     'depends': ['base', 'web'],
     'data': [
