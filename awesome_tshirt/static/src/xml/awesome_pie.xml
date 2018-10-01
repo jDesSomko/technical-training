@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <t t-name="pie.template">
+        <div class="awesome_pie">
+            <canvas id="pie-chart-canvas"/>
+        </div>
+    </t>
+</odoo>

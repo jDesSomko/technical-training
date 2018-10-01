@@ -11,11 +11,9 @@
 
     <t t-name="awesome_tshirt.Dashboard">
         <div>
-            <div class="counter"/>
-        </div>
+            <div class="counter dashboard-border"/>
 
-        <div>
-            <div class="statistics">
+            <div class="statistics dashboard-border">
                 <table>
                     <thead>
                         <tr>
@@ -47,6 +45,8 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="pie dashboard-border"/>
         </div>
     </t>
 </odoo>

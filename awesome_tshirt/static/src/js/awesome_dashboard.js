@@ -4,6 +4,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var ControlPanelMixin = require('web.ControlPanelMixin');
     var AbstractAction = require('web.AbstractAction');
     var Counter = require('awesome_tshirt.Counter');
+    var Pie = require('awesome_tshirt.Pie');
     var core = require('web.core');
     var qweb = core.qweb;
 
@@ -23,11 +24,14 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         start: function () {
             this._super.apply(this, arguments);
 
-            var counter = new Counter(this, 4);
+            this.counter = new Counter(this, 4);
+            this.pie = new Pie(this.statistics['orders_by_size'])
 
             // Render and insert into DOM
-            counter.appendTo(this.$el.find('.counter'));
-            this.renderButtons();
+            this.renderButtons(this.$el);
+
+            this.counter.appendTo(this.$el.find('.counter'));
+            this.pie.appendTo(this.$el.find('.pie'));
         },
         _onClickCustomer: function (ev) {
             ev.preventDefault();

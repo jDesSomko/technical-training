@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <t t-name="counter.template">
-        <div class="awesome_counter kanban">
+        <div class="awesome_counter">
             <span class="val">
                 <t t-esc="widget.value"/>
             </span>
