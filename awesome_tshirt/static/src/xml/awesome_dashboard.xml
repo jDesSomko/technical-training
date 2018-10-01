@@ -15,7 +15,38 @@
         </div>
 
         <div>
-            <div class="statistics"/>
+            <div class="statistics">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Number of new orders this month</td>
+                            <td><t t-esc="widget.statistics.nb_new_orders"/></td>
+                        </tr>
+                        <tr>
+                            <td>Total amount of orders this month</td>
+                            <td><t t-esc="widget.statistics.total_amount"/></td>
+                        </tr>
+                        <tr>
+                            <td>Number of cancelled orders this month</td>
+                            <td><t t-esc="widget.statistics.nb_cancelled_orders"/></td>
+                        </tr>
+                        <tr>
+                            <td>Average amount of t-shirt by order this month</td>
+                            <td><t t-esc="widget.statistics.average_quantity"/></td>
+                        </tr>
+                        <tr>
+                            <td>Average time for an order to go from 'new' to 'sent' or 'cancelled'</td>
+                            <td><t t-esc="widget.statistics.average_time"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </t>
 </odoo>
