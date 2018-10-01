@@ -5,10 +5,21 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var AbstractAction = require('web.AbstractAction');
     var Counter = require('awesome_tshirt.Counter');
     var core = require('web.core');
+    var qweb = core.qweb;
 
     var Dashboard = AbstractAction.extend(ControlPanelMixin, {
         template: 'awesome_tshirt.Dashboard',
         events: {},
+        willStart: function () {
+            var self = this
+            var def = this._rpc({
+                'route': '/awesome_tshirt/statistics'
+            }).then(function (statistics) {
+                self.statistics = statistics
+            });
+
+            return $.when(this._super.apply(this, arguments), def);
+        },
         start: function () {
             var counter = new Counter(this, 4);
 
