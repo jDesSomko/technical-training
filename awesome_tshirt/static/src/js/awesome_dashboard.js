@@ -9,7 +9,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
     var Dashboard = AbstractAction.extend(ControlPanelMixin, {
         template: 'awesome_tshirt.dashboard',
         events: {
-            'click button.customer': '_onClickCustomer',
+            'click button.open_customers': '_onClickCustomer',
             'click button.cancelled_orders': '_onClickCancelledOrders',
             'click button.new_orders': '_onClickNewOrders'
         },
@@ -21,29 +21,38 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         },
         _onClickCustomer: function (ev) {
             ev.preventDefault();
-            return this.do_action({
-                type: 'ir.actions.act_window',
-                res_model: 'res.partner',
-                views: [[false, 'kanban']],
-                target: 'current'
-            });
+            return this.do_action('base.action_partner_customer_form');
         },
         _onClickNewOrders: function (ev) {
             ev.preventDefault();
-            return this.do_action({
-                type: 'ir.actions.act_window',
-                res_model: 'res.partner',
-                views: [[false, 'kanban']],
-                target: 'current'
-            });
+
+            d = new Date()
+            d.setDate(d.getDate()-5);
+
+            return this._do_action_orders('New Orders', [
+                ['create_date', '>=', d],
+                ['state', '=', 'new']
+            ])
         },
         _onClickCancelledOrders: function (ev) {
             ev.preventDefault();
+
+            d = new Date()
+            d.setDate(d.getDate()-5);
+
+            return this._do_action_orders('New Orders', [
+                ['create_date', '>=', d],
+                ['state', '=', 'cancel']
+            ])
+        },
+        _do_action_orders: function(name, domain) {
             return this.do_action({
+                name: name,
                 type: 'ir.actions.act_window',
-                res_model: 'res.partner',
+                res_model: 'awesome_tshirt.order',
                 views: [[false, 'kanban']],
-                target: 'current'
+                target: 'current',
+                domain: domain
             });
         }
     });

@@ -2,13 +2,11 @@
 <odoo>
    <t t-name="awesome_tshirt.dashboard">
         <div>
-            <div class="counter"/>
+            <button class="btn btn-primary open_customers" name="Customers">Customers</button>
+            <button class="btn btn-primary new_orders" name="New Orders">New Orders</button>
+            <button class="btn btn-primary cancelled_orders" name="Cancelled Orders">Cancelled Orders</button>
 
-            <div class="actions">
-                <button class="customers" name="Customers">Customers</button>
-                <button class="new_orders" name="New Orders">New Orders</button>
-                <button class="cancelled_orders" name="Cancelled Orders">Cancelled Orders</button>
-            </div>
+            <div class="counter"/>
         </div>
     </t>
 </odoo>

@@ -20,22 +20,12 @@ odoo.define('awesome_tshirt.Counter', function (require) {
         //-------------------------------
         increment: function () {
             this.value++;
-            // this.renderElement();
+            this.renderElement();
         },
 
         decrement: function () {
             this.value--;
-            // this.renderElement();
-        },
-
-
-        //-------------------------------
-        // Private
-        //-------------------------------
-        _render: function () {
-            this.$el.html(
-                $('<span>').text(this.value)
-            );
+            this.renderElement();
         },
 
         //-------------------------------
