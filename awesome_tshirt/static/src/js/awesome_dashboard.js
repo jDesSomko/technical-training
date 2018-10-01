@@ -26,7 +26,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         _onClickNewOrders: function (ev) {
             ev.preventDefault();
 
-            d = new Date()
+            var d = new Date()
             d.setDate(d.getDate()-5);
 
             return this._do_action_orders('New Orders', [
@@ -37,7 +37,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         _onClickCancelledOrders: function (ev) {
             ev.preventDefault();
 
-            d = new Date()
+            var d = new Date()
             d.setDate(d.getDate()-5);
 
             return this._do_action_orders('New Orders', [
