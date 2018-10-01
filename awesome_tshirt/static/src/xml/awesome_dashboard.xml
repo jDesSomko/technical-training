@@ -5,9 +5,9 @@
             <div class="counter"/>
 
             <div class="actions">
-                <button class="customers" name="Customers"/>
-                <button class="customers" name="Customers"/>
-                <button class="customers" name="Customers"/>
+                <button class="customers" name="Customers">Customers</button>
+                <button class="new_orders" name="New Orders">New Orders</button>
+                <button class="cancelled_orders" name="Cancelled Orders">Cancelled Orders</button>
             </div>
         </div>
     </t>
