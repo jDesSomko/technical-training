@@ -50,7 +50,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
                 name: name,
                 type: 'ir.actions.act_window',
                 res_model: 'awesome_tshirt.order',
-                views: [[false, 'kanban']],
+                views: [[false, 'list'], [false, 'form']],
                 target: 'current',
                 domain: domain
             });
