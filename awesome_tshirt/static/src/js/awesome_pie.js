@@ -2,6 +2,7 @@ odoo.define('awesome_tshirt.Pie', function (require) {
     "use strict";
 
     var Widget = require('web.Widget');
+    var ajax = require('web.ajax');
 
     return Widget.extend({
         template: 'pie.template',
