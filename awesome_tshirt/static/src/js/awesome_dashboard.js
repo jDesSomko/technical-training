@@ -28,8 +28,6 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             this.pie = new Pie(this.statistics['orders_by_size'])
 
             // Render and insert into DOM
-            this.renderButtons(this.$el);
-
             this.counter.appendTo(this.$el.find('.counter'));
             this.pie.appendTo(this.$el.find('.pie'));
         },
@@ -69,7 +67,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
                 domain: domain
             });
         },
-        renderButtons: function ($node) {
+        _renderButtons: function () {
             this.$buttons = $(qweb.render('awesome_tshirt.Buttons', {
                 btnClass: 'btn-primary',
                 widget: this
@@ -78,8 +76,6 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             this.$buttons.on('click', 'button.open_customers', this._onClickCustomer.bind(this));
             this.$buttons.on('click', 'button.cancelled_orders', this._onClickCancelledOrders.bind(this));
             this.$buttons.on('click', 'button.new_orders', this._onClickNewOrders.bind(this));
-
-            this.$buttons.appendTo($node);
         }
     });
 
