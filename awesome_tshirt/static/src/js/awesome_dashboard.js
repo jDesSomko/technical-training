@@ -31,6 +31,8 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             this.counter.appendTo(this.$el.find('.counter'));
             this.pie.appendTo(this.$el.find('.pie'));
 
+            this._renderButtons()
+
             return superDef.then(this._updateControlPanel.bind(this))
         },
         _onClickCustomer: function (ev) {
@@ -72,7 +74,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
         _updateControlPanel: function () {
             this.update_control_panel({
                 cp_content: {
-                    $buttons: this.$buttons,
+                    $buttons: this.$buttons
                 }
             });
         },
