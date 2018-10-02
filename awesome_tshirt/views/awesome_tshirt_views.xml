@@ -101,6 +101,17 @@
         <field name="tag">awesome-tshirt-action</field>
     </record>
 
+    <record id="view_partner_geolocate_form" model="ir.ui.view">
+        <field name="name">res.partner.geolocate.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="js_class">geolocate_form_view</attribute>
+            </form>
+        </field>
+    </record>
+
     <!-- menu items -->
     <menuitem name="Awesome T-Shirts" id="awesome_tshirt.menu_root" groups="base.group_user" web_icon="awesome_tshirt,static/description/icon.png"/>
     <menuitem name="Orders" id="awesome_tshirt.order" parent="awesome_tshirt.menu_root" action="awesome_tshirt.orders"/>
