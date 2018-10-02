@@ -12,7 +12,7 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
     var qweb = core.qweb;
     var _t = core._t;
 
-    `var GeoLocateFormController = FormController.extend({
+    var GeoLocateFormController = FormController.extend({
         renderButtons: function ($node) {
             this._super.apply(this, arguments)
 
