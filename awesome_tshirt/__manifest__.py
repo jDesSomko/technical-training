@@ -11,7 +11,7 @@
     'category': 'Extra Tools',
     'version': '12.0.1.0',
     'application': True,
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'base_geolocalize'],
     'qweb': ['static/src/xml/awesome_dashboard.xml'],
     'data': [
         'security/ir.model.access.csv',
