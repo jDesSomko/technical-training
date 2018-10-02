@@ -8,6 +8,7 @@
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_pie.js"/>
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_dashboard.js"/>
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_counter.js"/>
+                <script type="text/javascript" src="/awesome_tshirt/static/src/js/image_preview.js"/>
             </xpath>
         </template>
     </odoo>

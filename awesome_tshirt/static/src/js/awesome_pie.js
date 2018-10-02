@@ -6,7 +6,7 @@ odoo.define('awesome_tshirt.Pie', function (require) {
 
     return Widget.extend({
         template: 'pie.template',
-        xmlDependencies: [],
+        xmlDependencies: ['/awesome_tshirt/static/src/xml/awesome_pie.xml'],
         jsLibs: [
             '/awesome_tshirt/static/lib/chart.js/Chart.js'
         ],

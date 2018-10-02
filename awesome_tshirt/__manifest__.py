@@ -12,8 +12,7 @@
     'version': '12.0.1.0',
     'application': True,
     'depends': ['base', 'web'],
-    'qweb': ['static/src/xml/awesome_dashboard.xml',
-             '/awesome_tshirt/static/src/xml/awesome_pie.xml'],
+    'qweb': ['static/src/xml/awesome_dashboard.xml'],
     'data': [
         'security/ir.model.access.csv',
 
