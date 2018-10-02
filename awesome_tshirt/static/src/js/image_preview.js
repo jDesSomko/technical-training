@@ -31,8 +31,10 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
          */
         _renderReadonly: function () {
             if (!!this.value) {
-                this.$el.replaceWith($('<img>', {'src': this.value}).error(function () {
-                    $(this).replaceWith($('<span>', {
+                var el = this.$el
+
+                el.replaceWith($('<img>', {'src': this.value}).error(function () {
+                    el.replaceWith($('<span>', {
                         'text': _t('Image URL Invalid!'),
                         'class': 'text-danger'
                     }))
