@@ -35,12 +35,12 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
                 var img = $('<img>', {'src': this.value})
 
                 img.error(function () {
-                    el.replaceWith($('<span>', {
+                    this.$el.replaceWith($('<span>', {
                         'text': _t('Image URL Invalid!'),
                         'class': 'text-danger'
-                    }))})
+                    }))}.bind(this))
 
-                el.replaceWith(img)
+                this.$el = img
             } else {
                 this.$el.text(_t('Image URL not set')).addClass('text-danger')
             }
