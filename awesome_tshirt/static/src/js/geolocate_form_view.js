@@ -17,12 +17,20 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
             this._super.apply(this, arguments)
 
             if (this.mode !== 'create') {
-                this.$buttons.append(qweb.render("awesome_tshirt.GeoLocateButton", {widget: this}));
+                this.$buttons.append(qweb.render("CustomerFormView.Buttons", {widget: this}));
                 this.$buttons.on('click', '.o_button_geolocate', this._onGeoLocate.bind(this));
             }
         },
         _onGeoLocate: function () {
-            
+            var self = this;
+            var res_id = this.model.get(this.handle, {raw: true}).res_id;
+            this._rpc({
+                model: 'res.partner',
+                method: 'geo_localize',
+                args: [res_id]
+            }).then(function () {
+                self.reload();
+            });
         }
     });
 

@@ -12,7 +12,10 @@
     'version': '12.0.1.0',
     'application': True,
     'depends': ['base', 'web', 'base_geolocalize'],
-    'qweb': ['static/src/xml/awesome_dashboard.xml'],
+    'qweb': [
+        'static/src/xml/awesome_dashboard.xml'
+        'static/src/xml/form_view.xml',
+    ],
     'data': [
         'security/ir.model.access.csv',
 
