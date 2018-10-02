@@ -18,9 +18,9 @@ odoo.define('awesome_tshirt.Pie', function (require) {
             this._super(parent);
             this.values = values;
         },
-        willStart: function() {
-            return $.when(ajax.loadLibs(this), this._super.apply(arguments))
-        },
+        // willStart: function() {
+        //     return $.when(ajax.loadLibs(this), this._super.apply(arguments))
+        // },
         start: function () {
             this._super.apply(this, arguments);
 
@@ -71,11 +71,11 @@ odoo.define('awesome_tshirt.Pie', function (require) {
                 }
             };
 
-            this.chart1 = new Chart(ctx1, {
-                type: "pie",
-                data: data2,
-                options: options
-            });
+            // this.chart1 = new Chart(ctx1, {
+            //     type: "pie",
+            //     data: data2,
+            //     options: options
+            // });
         }
     });
 });
