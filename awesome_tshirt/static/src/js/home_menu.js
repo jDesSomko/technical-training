@@ -1,9 +1,9 @@
 odoo.define('awesome_tshirt.HomeMenu', function (require) {
     "use strict";
 
-    var HomeMenu = require('web_enterprise.HomeMenu');
+    var AppSwitcher = require('web_enterprise.AppSwitcher');
 
-    HomeMenu.include({
+    AppSwitcher.include({
         render: function () {
             this._super();
             // do something else here...
