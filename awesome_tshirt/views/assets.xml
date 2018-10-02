@@ -11,6 +11,7 @@
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_dashboard.js"/>
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/awesome_counter.js"/>
                 <script type="text/javascript" src="/awesome_tshirt/static/src/js/image_preview.js"/>
+                <script type="text/javascript" src="/awesome_tshirt/static/src/js/boolean_indicator.js"/>
             </xpath>
         </template>
     </odoo>

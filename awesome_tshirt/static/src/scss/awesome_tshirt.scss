@@ -7,3 +7,17 @@
 .awesome_pie {
     height: 480px;
 }
+
+.boolean_indicator {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%
+}
+.boolean_indicator_true {
+    background-color: green;
+}
+
+.boolean_indicator_false {
+    background-color: red;
+}
