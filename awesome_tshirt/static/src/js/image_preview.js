@@ -9,33 +9,16 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
 
     var _t = core._t;
 
-    var FieldImagePreview = basicFields.InputField.extend({
+    var FieldImagePreview = basicFields.FieldChar.extend({
         className: 'o_field_image_preview',
-        supportedFieldTypes: ['char'],
-
-        /**
-         * In readonly, should be an img, not a span.
-         *
-         * @override
-         */
-        init: function () {
-            this._super.apply(this, arguments);
-            this.tagName = this.mode === 'readonly' ? 'img' : 'input';
-        },
 
         //--------------------------------------------------------------------------
         // Public
         //--------------------------------------------------------------------------
 
-        /**
-         * Returns the associated link.
-         *
-         * @override
-         */
-        getFocusableElement: function () {
-            return this.mode === 'readonly' ? this.$el : this._super.apply(this, arguments);
+        isSet: function () {
+            return true;
         },
-
         //--------------------------------------------------------------------------
         // Private
         //--------------------------------------------------------------------------
@@ -47,10 +30,15 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
          * @private
          */
         _renderReadonly: function () {
-            if (!this.isSet()) {
-                this.$el.html($('span').text(_t('Image URL not set')))
+            if (!!this.value) {
+                this.$el.html($('<img>', {'src': this.value}).error(function () {
+                    $(this).replaceWith($('<span>', {
+                        'text': _t('Image URL not set'),
+                        'class': 'text-danger'
+                    }))
+                }))
             } else {
-                this.$el.attr('src', this.value);
+                this.$el.text(_t('Image URL not set')).addClass('text-danger')
             }
         }
     });
