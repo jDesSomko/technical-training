@@ -15,14 +15,19 @@ odoo.define('awesome_tshirt.HomeMenu', function (require) {
          */
         _render: function () {
             this._super.apply(this, arguments);
-            var $message = $('<div>', {
-                class: 'p-2 alert-warning o_custom_message'
-            }).text(_t("Bafien Ckinpaers is watching you!"));
 
-            $('<i class="fa fa-eye"></i><i class="fa fa-eye"></i>').appendTo($message);
+            var self = this
 
-            this.$('.o_custom_message').remove();
-            this.$el.prepend($message);
+            this._rpc({route: '/awesome_tshirt/bafienistalkingtoyou'}).then(function (result) {
+                var $message = $('<div>', {
+                    class: 'p-2 alert-warning o_custom_message'
+                }).text(result);
+
+                $('<i class="fa fa-eye"></i><i class="fa fa-eye"></i>').appendTo($message);
+
+                self.$('.o_custom_message').remove();
+                self.$el.prepend($message);
+            })
         }
     });
 });
