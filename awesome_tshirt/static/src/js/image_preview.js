@@ -4,6 +4,7 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
     var AbstractField = require('web.AbstractField');
     var core = require('web.core');
     var field_registry = require('web.field_registry');
+
     var basicFields = require('web.basic_fields');
 
     var _t = core._t;
@@ -46,9 +47,15 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
          * @private
          */
         _renderReadonly: function () {
-            this.$el.attr('src', this.value);
+            if (!this.isSet()) {
+                this.$el.html($('span').text(_t('Image URL not set')))
+            } else {
+                this.$el.attr('src', this.value);
+            }
         }
     });
 
     field_registry.add('image_preview', FieldImagePreview);
+
+    return FieldImagePreview
 });
