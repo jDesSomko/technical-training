@@ -48,9 +48,15 @@ odoo.define('awesome_tshirt.printlabel_form_view', function (require) {
                 model: 'awesome_tshirt.order',
                 method: 'print_label',
                 args: [res_id],
-            }).then(function () {
-                self.printing = false;
-                self.reload();
+            }).then(function (result) {
+
+                if (result) {
+                    this.do_notify(_t("Success"), _t("Your printing request has been sent."));
+                    self.printing = false;
+                    self.reload();
+                } else {
+                    this.do_warn(_t("Error"), _t("Printing failed."));
+                }
             });
         }
     });

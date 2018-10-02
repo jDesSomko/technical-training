@@ -13,7 +13,7 @@
     'application': True,
     'depends': ['base', 'web', 'base_geolocalize'],
     'qweb': [
-        'static/src/xml/awesome_dashboard.xml'
+        'static/src/xml/awesome_dashboard.xml',
         'static/src/xml/form_view.xml',
     ],
     'data': [
