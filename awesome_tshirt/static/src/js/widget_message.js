@@ -12,10 +12,27 @@ odoo.define('awesome_tshirt.widget_message', function (require) {
             this.data = dataPoint.data;
         },
         start: function () {
-            this.$el.text(this.data.foo + "!");
+            this.update_message(this.data)
         },
         updateState: function (dataPoint) {
-            this.$el.text(dataPoint.data.foo + "!");
+            this.update_message(dataPoint.data);
+        },
+        update_message: function (data) {
+            var message
+
+            if (!data.image_url) {
+                message = $('<div class="alert alert-info">').text('No image!')
+            } else if (data.amount > 100) {
+                message = $('<div class="alert alert-info">').text('Add promotional material!')
+            } else {
+                message = false
+            }
+
+            this.$el.empty()
+            if (!!message) {
+
+                this.$el.html(message)
+            }
         }
     });
 
