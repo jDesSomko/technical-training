@@ -12,7 +12,7 @@ odoo.define('awesome_tshirt.QuickOrderNavigation', function (require) {
 
     });
 
-    SystrayMenu.items.push(QuickOrderNavigation);
+    SystrayMenu.Items.push(QuickOrderNavigation);
 
     return QuickOrderNavigation
 });
