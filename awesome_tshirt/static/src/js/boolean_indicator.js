@@ -28,6 +28,12 @@ odoo.define('awesome_tshirt.boolean_indicator', function (require) {
             } else {
                 this.$el = $('<span class="boolean_indicator boolean_indicator_false" />')
             }
+        },
+
+        _render: function () {
+            this.$el.html($('<div>').css({
+                backgroundColor: this.value ? this.lateColor : this.notLateColor
+            }));
         }
     });
 
