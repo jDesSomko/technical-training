@@ -116,7 +116,7 @@
         </t>
     </template>
 
-    <t t-name="awesome_tshirt.GeoLocateButton">
+    <template id="awesome_tshirt.GeoLocateButton" name="GeoLocateButton">
         <button type="button" class="btn btn-secondary o_button_geolocate">GeoLocate</button>
-    </t>
+    </template>
 </odoo>
