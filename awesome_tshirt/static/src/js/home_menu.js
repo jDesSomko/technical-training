@@ -3,6 +3,8 @@ odoo.define('awesome_tshirt.HomeMenu', function (require) {
 
     var core = require('web.core');
     var HomeMenu = require('web_enterprise.HomeMenu');
+    var session = require('web.session');
+
     var _t = core._t;
 
     HomeMenu.include({
@@ -23,11 +25,16 @@ odoo.define('awesome_tshirt.HomeMenu', function (require) {
                     class: 'p-2 alert-warning o_custom_message'
                 }).text(result);
 
-                $('<i class="fa fa-eye"></i><i class="fa fa-eye"></i>').appendTo($message);
-
                 self.$('.o_custom_message').remove();
                 self.$el.prepend($message);
             })
+
+            var session_message = $('<div>', {
+                class: 'p-2 alert-warning o_custom_motd'
+            }).text(session.motd);
+
+            self.$('.o_custom_motd').remove();
+            self.$el.prepend(session_message);
         }
     });
 });
