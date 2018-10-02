@@ -11,6 +11,8 @@
                     <field name="state" widget="statusbar" clickable="1"/>
                 </header>
                 <sheet>
+                    <widget name="widget_message"/>
+
                     <group>
                         <group>
                             <field name="customer_id"/>

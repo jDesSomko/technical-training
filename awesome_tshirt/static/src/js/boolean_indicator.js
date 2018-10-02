@@ -16,24 +16,12 @@ odoo.define('awesome_tshirt.boolean_indicator', function (require) {
         // Private
         //--------------------------------------------------------------------------
 
-        /**
-         * In readonly, should be a img.
-         *
-         * @override
-         * @private
-         */
-        _renderReadonly: function () {
-            if (this.value) {
-                this.$el = $('<span class="boolean_indicator boolean_indicator_true" />')
-            } else {
-                this.$el = $('<span class="boolean_indicator boolean_indicator_false" />')
-            }
-        },
-
         _render: function () {
-            this.$el.html($('<div>').css({
-                backgroundColor: this.value ? this.lateColor : this.notLateColor
-            }));
+            if (this.value) {
+                this.$el.html($('<span class="boolean_indicator boolean_indicator_true" />'))
+            } else {
+                this.$el.html($('<span class="boolean_indicator boolean_indicator_false" />'))
+            }
         }
     });
 
