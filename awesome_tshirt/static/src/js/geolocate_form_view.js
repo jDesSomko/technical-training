@@ -2,14 +2,13 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
     'use strict';
 
     var viewRegistry = require('web.view_registry');
+    var QWeb = require('web.QWeb');
 
     var AbstractField = require('web.AbstractField');
     var core = require('web.core');
 
     var FormView = require('web.FormView');
     var FormController = require('web.FormController');
-
-    var basicFields = require('web.basic_fields');
 
     var _t = core._t;
 
@@ -21,6 +20,9 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
                 this.$buttons.append(qweb.render("awesome_tshirt.GeoLocateButton", {widget: this}));
                 this.$buttons.on('click', '.o_button_geolocate', this._onGeoLocate.bind(this));
             }
+        },
+        _onGeoLocate: function () {
+            
         }
     });
 
@@ -32,5 +34,8 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
 
     viewRegistry.add('geolocate_form_view', GeoLocateFormView);
 
-    return FieldBooleanIndicator
+    return {
+        GeoLocateFormController: GeoLocateFormController,
+        GeoLocateFormView: GeoLocateFormView
+    }
 });
