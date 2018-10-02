@@ -22,7 +22,7 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             return $.when(this._super.apply(this, arguments), def);
         },
         start: function () {
-            this._super.apply(this, arguments);
+            var superDef = this._super.apply(this, arguments);
 
             this.counter = new Counter(this, 4);
             this.pie = new Pie(this.statistics['orders_by_size'])
@@ -30,6 +30,8 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
             // Render and insert into DOM
             this.counter.appendTo(this.$el.find('.counter'));
             this.pie.appendTo(this.$el.find('.pie'));
+
+            return superDef.then(this._updateControlPanel.bind(this))
         },
         _onClickCustomer: function (ev) {
             ev.preventDefault();
@@ -65,6 +67,13 @@ odoo.define('awesome_tshirt.Dashboard', function (require) {
                 views: [[false, 'list'], [false, 'form']],
                 target: 'current',
                 domain: domain
+            });
+        },
+        _updateControlPanel: function () {
+            this.update_control_panel({
+                cp_content: {
+                    $buttons: this.$buttons,
+                }
             });
         },
         _renderButtons: function () {
