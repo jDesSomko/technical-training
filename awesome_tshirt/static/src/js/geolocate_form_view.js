@@ -17,7 +17,7 @@ odoo.define('awesome_tshirt.geolocate_form_view', function (require) {
             this._super.apply(this, arguments)
 
             if (this.mode !== 'create') {
-                this.$buttons.append(qweb.render("awesome_tshirt.GeoLocateButton", {widget: this}));
+                this.$buttons.append(QWeb.render("awesome_tshirt.GeoLocateButton", {widget: this}));
                 this.$buttons.on('click', '.o_button_geolocate', this._onGeoLocate.bind(this));
             }
         },
