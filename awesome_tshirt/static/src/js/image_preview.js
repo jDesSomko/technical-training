@@ -4,10 +4,11 @@ odoo.define('awesome_tshirt.image_preview', function (require) {
     var AbstractField = require('web.AbstractField');
     var core = require('web.core');
     var field_registry = require('web.field_registry');
+    var basicFields = require('web.basic_fields');
 
     var _t = core._t;
 
-    var FieldImagePreview = InputField.extend({
+    var FieldImagePreview = basicFields.InputField.extend({
         className: 'o_field_image_preview',
         supportedFieldTypes: ['char'],
 
