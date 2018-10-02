@@ -71,11 +71,11 @@ odoo.define('awesome_tshirt.Pie', function (require) {
                 }
             };
 
-            // this.chart1 = new Chart(ctx1, {
-            //     type: "pie",
-            //     data: data2,
-            //     options: options
-            // });
+            this.chart1 = new Chart(ctx1, {
+                type: "pie",
+                data: data2,
+                options: options
+            });
         }
     });
 });
